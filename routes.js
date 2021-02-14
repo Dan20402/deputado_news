@@ -2,8 +2,7 @@ const express = require('express');
 const app = express();
 const router = express.Router();
 const fetch = require('node-fetch');
-const ejs = require('ejs');
-//const bodyParser = require('body-parser');
+require('dotenv').config();
 
 const DEPUTADOS_URL = `https://dadosabertos.camara.leg.br/api/v2/deputados?ordem=ASC&ordenarPor=nome`;
 
@@ -16,7 +15,7 @@ router
   .get(async (req, res) => {
     const response = await fetch(DEPUTADOS_URL);
     const data = await response.json();
-    app.locals.listAllDeputados.push(...data.dados); //This avoids arr within an arr issue
+    app.locals.listAllDeputados.push(...data.dados); //spread operator avoids arr within an arr issue
     res.render('index', {
       deputados: app.locals.listAllDeputados,
       selected: app.locals.selectedDeputado,
@@ -29,8 +28,8 @@ router
       (deputado) => deputado.id == thisDeputadoId
     );
 
-    const apiKey = '5d425dea7e5246bda907a9cae559a448';
-    const newsUrl = `http://newsapi.org/v2/everything?q=${app.locals.selectedDeputado.nome}&apiKey=${apiKey}`;
+    const API_KEY = process.env.NEWS_API_KEY;
+    const newsUrl = `http://newsapi.org/v2/everything?q=${app.locals.selectedDeputado.nome}&apiKey=${API_KEY}`;
 
     const response = await fetch(newsUrl);
     const data = await response.json();
