@@ -1,0 +1,8 @@
+Learn to use issues in github!
+
+-Create async error handling for subsequent submits.
+
+-Orginize code into routes file and filter news file.
+
+-Make it pretty then deploy
+
