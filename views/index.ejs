@@ -8,16 +8,18 @@
   </head>
   <body>
     <div class="container">
-      <h1 class="header">Deputado News</h1>
+      <div class="news-header">
+        <h1>Deputado News</h1>
+      </div>
+
       <div class="dropdown">
         <form action="/" method="post">
-          <select name="selected_deputado_id">
-            <option value="">-- Selecione --</option>
+          <select name="selected_deputado_id" onchange="this.form.submit()">
+            <option disabled selected>-- Selecione um deputado --</option>
             <% deputados.forEach((deputado) => { %>
             <option value="<%= deputado.id %>"><%= deputado.nome %></option>
             <%}) %>
           </select>
-          <button type="submit">Submit</button>
         </form>
       </div>
 
@@ -33,7 +35,7 @@
 
       <div class="card">
         <a href="<%=article.url%>">
-          <img src="<%=article.urlToImage%>" alt="" />
+          <img class="article-image" src="<%=article.urlToImage%>" alt="" />
           <div class="card-body">
             <h2><%=article.title%></h2>
             <p><%=article.content%></p>
