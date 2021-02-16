@@ -15,7 +15,7 @@ router
   .get(async (req, res) => {
     const response = await fetch(DEPUTADOS_URL);
     const data = await response.json();
-    app.locals.listAllDeputados.push(...data.dados); //spread operator avoids arr within an arr issue
+    app.locals.listAllDeputados.push(...data.dados);
     res.render('index', {
       deputados: app.locals.listAllDeputados,
       selected: app.locals.selectedDeputado,
