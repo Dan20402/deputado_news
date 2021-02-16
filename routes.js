@@ -28,11 +28,14 @@ router
       (deputado) => deputado.id == thisDeputadoId
     );
 
-    const API_KEY = process.env.NEWS_API_KEY;
-    const newsUrl = `http://newsapi.org/v2/everything?q=${app.locals.selectedDeputado.nome}&apiKey=${API_KEY}`;
+    //const API_KEY = process.env.NEWS_API_KEY;
+    const API_KEY = '5d425dea7e5246bda907a9cae559a448';
+    const newsUrl = `http://newsapi.org/v2/everything?q="${app.locals.selectedDeputado.nome}"&apiKey=${API_KEY}`;
 
     const response = await fetch(newsUrl);
     const data = await response.json();
+    ç;
+
     app.locals.allArticles = [];
 
     const news = data.articles.filter((obj) => {
@@ -47,6 +50,13 @@ router
     });
 
     app.locals.allArticles.push(...news);
+
+    if (app.locals.allArticles.length === 0) {
+      res.render('no_news', {
+        deputados: app.locals.listAllDeputados,
+        selected: app.locals.selectedDeputado,
+      });
+    }
 
     res.render('index', {
       deputados: app.locals.listAllDeputados,

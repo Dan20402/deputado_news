@@ -10,7 +10,6 @@
     <div class="container">
       <div class="news-header">
         <h1>Alguma notícia deputado(a)?</h1>
-        <h3>...notícias sobre o seu Deputado Federal favorito</h3>
       </div>
 
       <div class="dropdown">
@@ -30,20 +29,11 @@
         <p><%=selected.siglaPartido%>-<%=selected.siglaUf%></p>
       </div>
 
-      <!-- News Card -->
+      <!-- No News -->
 
-      <% allArticles.forEach((article)=>{ %>
+      
+      <h1 id="no-news">Não encontramos notícias sobre <%= selected.nome%></h1>
 
-      <div class="card">
-        <a href="<%=article.url%>">
-          <img class="article-image" src="<%=article.urlToImage%>" alt="" />
-          <div class="card-body">
-            <h2><%=article.title%></h2>
-            <p><%=article.description%></p>
-          </div>
-        </a>
-      </div>
-      <% })%>
     </div>
   </body>
 </html>
