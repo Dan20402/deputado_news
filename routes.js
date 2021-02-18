@@ -34,8 +34,6 @@ router
 
     const response = await fetch(newsUrl);
     const data = await response.json();
-    ç;
-
     app.locals.allArticles = [];
 
     const news = data.articles.filter((obj) => {

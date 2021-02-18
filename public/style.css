@@ -12,6 +12,7 @@ body {
   grid-template-rows: auto;
   grid-gap: 2%;
   align-items: center;
+  margin: 5%;
 }
 
 a {
@@ -23,6 +24,20 @@ a {
   font-family: 'Domine', serif;
   font-size: 200%;
 }
+
+.dropdown {
+  display: grid;
+}
+
+form {
+  margin: auto;
+}
+
+#no-news {
+  font-family: 'Domine', serif;
+  font-size: 300%;
+}
+
 /************************************** name-foto-party **********************************************/
 
 .name-foto-party {
@@ -40,10 +55,12 @@ a {
   border: 1px solid rgba(70, 70, 70, 0);
   box-shadow: 5px 5px 5px rgb(184, 184, 184);
   border-radius: 5px;
+  max-width: 200px;
+  max-height: 200px;
 }
 
 .name-foto-party p {
-  padding-top: 10px;
+  padding-top: 30px;
   margin: auto;
 }
 
