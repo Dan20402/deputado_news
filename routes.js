@@ -2,7 +2,6 @@ const express = require('express');
 const app = express();
 const router = express.Router();
 const fetch = require('node-fetch');
-require('dotenv').config();
 
 const DEPUTADOS_URL = `https://dadosabertos.camara.leg.br/api/v2/deputados?ordem=ASC&ordenarPor=nome`;
 
@@ -28,7 +27,7 @@ router
       (deputado) => deputado.id == thisDeputadoId
     );
 
-    const API_KEY = process.env.NEWS_API_KEY;
+    const API_KEY = '5d425dea7e5246bda907a9cae559a448'; //process.env.NEWS_API_KEY;
 
     const newsUrl = `http://newsapi.org/v2/everything?q="${app.locals.selectedDeputado.nome}"&apiKey=${API_KEY}`;
     const response = await fetch(newsUrl);
