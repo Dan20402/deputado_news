@@ -10,8 +10,8 @@ app.set('view engine', 'ejs');
 app.use(express.static('public'));
 app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: false }));
-app.use('/', router);
+app.use('/deputados', router);
 
-//const PORT = process.env.PORT;
-PORT = 3000;
+const PORT = process.env.PORT;
+
 app.listen(PORT, console.log(`Listening on port ${PORT}`));

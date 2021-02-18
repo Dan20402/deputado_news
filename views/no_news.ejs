@@ -13,7 +13,7 @@
       </div>
 
       <div class="dropdown">
-        <form action="/" method="post">
+        <form action="/deputados" method="post">
           <select name="selected_deputado_id" onchange="this.form.submit()">
             <option disabled selected>-- Selecione um deputado --</option>
             <% deputados.forEach((deputado) => { %>
@@ -33,7 +33,6 @@
 
       <h1></h1>
       <h1 id="no-news">Não encontramos notícias sobre <%= selected.nome%>!</h1>
-
     </div>
   </body>
 </html>
