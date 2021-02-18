@@ -27,7 +27,8 @@ router
       (deputado) => deputado.id == thisDeputadoId
     );
 
-    const API_KEY = '5d425dea7e5246bda907a9cae559a448'; //process.env.NEWS_API_KEY;
+    const API_KEY = process.env.API_KEY;
+    //const API_KEY = '5d425dea7e5246bda907a9cae559a448';
 
     const newsUrl = `http://newsapi.org/v2/everything?q="${app.locals.selectedDeputado.nome}"&apiKey=${API_KEY}`;
     const response = await fetch(newsUrl);
