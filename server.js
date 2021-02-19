@@ -10,7 +10,7 @@ app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use('/', router);
 
-//const PORT = process.env.PORT;
-const PORT = 3000;
+const PORT = process.env.PORT;
+//const PORT = 3000;
 
 app.listen(PORT, console.log(`Listening on port ${PORT}`));
