@@ -1,6 +1,6 @@
 # Alguma notícia Deputado(a)?
 
-Uma pequenoa aplicação web que levanta notícias sobre os deputados federais da atual legislatura utilizando 
+Uma pequena aplicação web que levanta notícias sobre os deputados federais da atual legislatura utilizando 
 o API Dados Abertos da câmara dos desputados e o NEWSAPI. Esse é o meu primeiro projeto e foi criado com a intenção de aprender 
 os princípios desenvolvimento web, da concepção ao deploy.
  
